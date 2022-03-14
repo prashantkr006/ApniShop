@@ -1,14 +1,15 @@
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Category_Card from '../components/Category_Card';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <TextInput style={[styles.searchBar, styles.borderShadow]} />
       </View>
-      {/*body part*/}
+      {/* body Component */}
     <View style={styles.body}>
       <View style={styles.imageCard}>
         <Category_Card imageSource={require("../assets/men's_clothing.jpg")} />
@@ -46,14 +47,18 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   header: {
-    backgroundColor: '#85182a',
-    height: 200,
+    backgroundColor: '#880F2F',
+    height: '30%',
     width: '100%',
     alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   searchBar: {
     margin: 10,

@@ -1,46 +1,21 @@
-import {
-  StyleSheet,
-  Button,
-  Text,
-  View,
-  StatusBar,
-  SafeAreaView,
-} from 'react-native';
-import React from 'react';
-import Home from './src/screens/Home';
-import Cart from './src/screens/Cart';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+import { StyleSheet, SafeAreaView, StatusBar } from 'react-native'
+import React from 'react'
+import Home from './src/screens/Home/Home'
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StatusBar backgroundColor="#590D22" />
-      <Stack.Navigator
-       screenOptions={{
-        title: 'Apni Shop',
-        headerStyle: {backgroundColor: '#590D22'},
-        headerTintColor: '#FFF0F3',
-        headerTitleStyle: {fontFamily: 'RomandeADFStd-DemiBold', fontSize: 30}
-      }}>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen
-          name="Cart"
-          component={Cart}
-          options={{title: 'Apni Shop'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+    <SafeAreaView style={styles.container}>
+    <StatusBar backgroundColor='#E2EAFC' barStyle='dark-content' />
+    <Home />
+    </SafeAreaView>
+  )
+}
 
-export default App;
+export default App
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    flex: 1,
+  }
+})
